@@ -1,3 +1,4 @@
+// IE don't have built in getElementsByClassName function
 document.getElementsByClassName = function(className, element){
   var children = (element || document).getElementsByTagName('*');
   var elements = new Array();
@@ -15,7 +16,8 @@ document.getElementsByClassName = function(className, element){
 };
 
 
-setInterval(
+// execute every 8000ms
+var ret_id = setInterval(
   function() {
     var els = document.getElementsByClassName('dfss_down');
     if (els.length == 1){
